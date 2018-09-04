@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/category.css"/>
+	</head>
+	<body>
+		<header>
+			<div class="message" onclick="history.back()"><img src="images/detail/fanhui.gif"/></div>
+			<div class="search">
+				<input type="tex" name="" id="" value="搜索框..." />
+			</div>
+			<div class="sys"><img src="images/index/icon_xiaoxi.jpg"/></div>
+		</header>
+	 
+		<main>
+			<aside>
+				<a href="#" class="active"><p class="colo">为你推荐</p></a>
+				<a href="#">品牌墙</a>
+				<a href="#">美容化妆</a>
+				<a href="#">婴儿专区</a>
+				<a href="#">营养保健</a>
+				<a href="#">个人洗护</a>
+				<a href="#">家具生活</a>
+				<a href="#">数码家电</a>
+				<a href="#">轻奢</a>
+				<a href="#">运动户外</a>
+				<a href="#">美丽健身</a>
+				<a href="#">现场化妆</a>
+				<a href="#">年轻专场</a>
+			</aside>
+			<article> 
+				<div class="phone">
+					<h2>热门分类<em>热销榜</em></h2>
+					<div class="phone_content" >
+							<div v-for="item in ary">
+								<a v-bind="{href:'list.html?keyword='+item.title}" >
+									<img :src="item.img" />
+								</a>
+								    <p>{{item.title}}</p>
+							</div>
+					</div>
+				</div>
+	          <div class="phone">
+					<h2>品牌推荐</h2>
+					<div class="phone_content pp_content">
+							<div>
+							 <img src="images/category/pp_01.gif"/>
+						     <p>耐克</p>
+							</div>
+							<div>
+							 <img src="images/category/pp_02.gif"/>
+						     <p>资生堂</p>
+							</div>
+							<div>
+							 <img src="images/category/pp_03.gif"/>
+						     <p>阿迪达斯</p>
+							</div>
+							<div>
+							 <img src="images/category/pp_04.gif"/>
+						     <p>RE:CIPE</p>
+							</div>
+							<div>
+							 <img src="images/category/pp_05.gif"/>
+						     <p>JMsolution</p>
+							</div>
+							<div>
+							 <img src="images/category/pp_06.gif"/>
+						     <p>全部品牌</p>
+							</div>
+					</div>
+				</div>	
+				<div class="choice">
+					<h2>精选专辑 <em>换一换</em></h2>
+					<div class="choice_content">
+						<div>
+							<div class="jx_pic"><img src="images/category/jx_01.gif"/></div>
+						   <div class="jx_article"> 
+						   	<b>好茶喝出好气色<p><em>13</em>款商品  <em>7.4万</em>人购买</p></b>
+						   </div>
+						   <div class="jx_pic2">
+						   	<img src="images/category/xiaojiantou.gif""/>
+						   </div>
+						</div>
+					</div>
+				</div>
+				<div class="choice_content">
+						<div>
+							<div class="jx_pic"><img src="images/category/jx_02.gif"/></div>
+						   <div class="jx_article"> 
+						   	<b>为宝宝煮一碗面<p><em>11</em>款商品  <em>6.3万</em>人购买</p></b>
+						   </div>
+						   <div class="jx_pic2">
+						   	<img src="images/category/xiaojiantou.gif""/>
+						   </div>
+						</div>
+					</div>
+				</div>
+				<div class="choice_content">
+						<div>
+							<div class="jx_pic"><img src="images/category/jx_03.gif"/></div>
+						   <div class="jx_article"> 
+						   	<b>放下手机  学会生活<p><em>8</em>款商品  <em>5万</em>人购买</p></b>
+						   </div>
+						   <div class="jx_pic2">
+						   	<img src="images/category/xiaojiantou.gif""/>
+						   </div>
+						</div>
+					</div>
+				</div>
+				<div class="choice_content">
+						<div>
+							<div class="jx_pic"><img src="images/category/jx_04.gif"/></div>
+						   <div class="jx_article"> 
+						   	<b>榜单好产品<p><em>26</em>款商品  <em>3.8万</em>人购买</p></b>
+						   </div>
+						   <div class="jx_pic2">
+						   	<img src="images/category/xiaojiantou.gif""/>
+						   </div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			</article>
+		</main>
+		
+		<footer>
+			<a href="index.html"><img src="images/category/icom_home.gif"/><p>主页</p></a>
+			<a href="category.html"><img src="images/category/icon_serch2.gif"/><p>分类</p></a>
+			<a href="index.html"><img src="images/index/icon_collect.gif"/><p>社区</p></a>
+			<a href="shopcar.html"><img src="images/index/icon_car.gif"><p>购物车</p></a>
+			<a href="user.html"><img src="images/index/icon_user.gif"/><p>我的</p></a>
+		</footer>
+		
+	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	<script src="vue/dist/vue.js" type="text/javascript" charset="utf-8"></script>
+	<script src="axios/dist/axios.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var app = new Vue({
+			el:".phone",
+			data:{
+				ary:[]
+			},
+			created(){
+				this.getData()
+			},
+			methods:{
+				getData(){
+					axios.get("/abc").then((res)=>{
+						console.log(res);
+						this.ary = res.data;
+					})
+		
+				}
+				
+			}
+		})
+	</script>
+	</body>
+</html>

@@ -1,0 +1,15 @@
+*{ margin: 0; padding: 0; box-sizing: border-box;}
+body { font-size: 0.32rem;}
+header { height: 0.9rem; display: flex; border-bottom:0.02rem solid #dddddd ;}
+.message,.sys { width: 1.1rem;}
+.search { flex: 1; color: #666;}
+header > div { display: flex; justify-content: center; align-items: center;}
+header img { width: 48%; height: auto;}
+.message img { width: 35%;}
+.install { display: flex; justify-content: space-between; padding:0.3rem 0.3rem; font-size: 0.26rem; border-bottom: 0.02rem solid #E0E1E4;}
+.install > span { color: #33333;}
+.install > div { width: 0.28rem; height: 0.28rem;}
+.install > div > img { width: 100%; height: auto;}
+.axcne {  border-bottom: 0.1rem solid #E0E1E4;}
+.btn { text-align: center; border: none; margin: 0.2rem;}
+button { width: 7rem; height: 0.8rem; border-radius: 4px; border: none; margin-top: 0.5rem;}

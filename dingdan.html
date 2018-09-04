@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/dingdan.css"/>
+	</head>
+	<body>
+		<header>
+			<div class="message" onclick="history.back()"><img src="images/detail/fanhui.gif"/></div>
+			<div class="search">
+				  我的订单
+			</div>
+			<div class="fx"><img src="images/dingdan/diandian.gif"/></div>
+		</header>
+		<div id="box">
+			 <div class="dingdan" v-if="isShow">
+			 	<img src="../../images/dingdan/dingdan.gif"/>
+			 	<p>啊哦~你还没有订单信息</p>
+			 </div>
+		      <div v-else>
+		      	 <div v-for="item in ary" class="dingdan_ander">
+		      	 	<div class="top">
+		      	 		<h2>{{item.category}} 旗舰店 </h2>
+		      	 	      <span>订单</span>
+		      	 	</div>
+		      	 	  <div class="dingdan_counter">
+		      	 	  	<div class="shop_photo">
+							<img :src="item.img"/>
+						</div>
+						<div class="nr">
+							<h3>{{item.title}}</h3>
+							<span>7天退货退款</span>
+						</div>
+						<div class="shop_price">
+						  <em>￥{{item.price}}.00</em>
+						<p>x1</p>
+					    </div>
+		      	 	  </div>
+		      	 </div>
+		      	 
+		      </div>
+		</div>
+		
+		
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	    <script src="vue/dist/vue.js" type="text/javascript" charset="utf-8"></script>
+	    <script type="text/javascript">
+	    	console.log()
+	    	 var app = new Vue({
+	    	 	el:"#box",
+	    	 	data:{
+	    	 		ary:JSON.parse(localStorage.getItem("shopCbr")) || [],
+				    isShow:true	 	 		
+	    	 	},
+	    	 	created(){
+				if(this.ary.length != 0){
+					this.isShow = false
+				}
+			}
+	    	 	
+	    	 })
+	    </script>
+	</body>
+	
+</html>

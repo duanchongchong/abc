@@ -1,0 +1,27 @@
+*{ margin: 0; padding: 0; box-sizing: border-box;}
+body { font-size: 0.32rem;}
+header { height: 0.9rem; display: flex; border-bottom:0.02rem solid #dddddd ;}
+.message,.sys { width: 1.1rem;}
+.search { flex: 1; color: #666;}
+header > div { display: flex; justify-content: center; align-items: center;}
+header img { width: 60%; height: auto;}
+.message img { width: 35%;}
+.fx img, { width: 55%; height: auto;}
+.dL { padding-top: 1rem;}
+.zhanghao,.pwd { display: flex; justify-content: center; align-content: center; }
+ input { width: 80%; height: 0.8rem;  margin: 0.2rem 0;border: none; border-bottom: 0.02rem solid #efefef; font-size: 0.26rem;}
+.denglu { display: flex; justify-content: center; padding-top: 0.5rem;}
+.denglu button { background: #ffc2b5; border: none; width: 6.5rem; height: 1rem; border-radius: 0.5rem; margin-top: 0.5rem; font-size: 0.26rem;color: #ffffff;}
+.m_z { display: flex; justify-content: space-between; margin-top: 0.5rem;}
+.m_z a { text-decoration: none; font-size: 0.26rem; padding: 0 0.6rem;}
+.mf { color: #666666;}
+.zh { color: #666666;}
+.hz { display: flex; justify-content: center;}
+.hz_s { display: flex; width: 90%; border-bottom: 0.01rem dashed #c8c8c8; margin-top: 1rem; padding-bottom: 0.2rem; justify-content: center;}
+.hz_s span {color: #666666; font-size: 0.26rem;}
+.qw { display: flex; height: 2.46rem; justify-content: space-between; align-items: center;}
+.qw > div { display: flex; flex-wrap: wrap;}
+.qw img { width: 35%;}
+.wechat { flex: 1; justify-content: center; align-items: center;}
+.qq { flex: 1; justify-content: center; align-items: center;}
+.qw span { width: 100%; text-align: center; color: #666666; padding-top: 0.15rem; font-size: 0.26rem;}

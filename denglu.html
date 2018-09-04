@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/denglu.css"/>
+	</head>
+	<body>
+		<header>
+			<div class="message" onclick="history.back()"><img src="images/detail/fanhui.gif"/></div>
+			<div class="search">
+				  登录
+			</div>
+			<div class="fx" onclick="history.back()"><img src="images/login/wrone.gif"/></div>
+		</header>
+		<div id="box">
+		<div class="dL">
+			<div class="zhanghao">
+				<input type="number" v-model="obj.phone" placeholder="用户名/邮箱/手机号" />
+			</div>
+			<div class="pwd">
+				<input type="password" v-model="obj.pwd" placeholder="请输入密码" />
+			</div>
+		</div>
+			<div class="bg">
+			<div class="denglu">
+				<button @click="submit()">登录</button>
+			</div>
+			<div class="m_z">
+				<a href="reg.html" class="mf" >免费注册</a>
+				<a class="zh">找回密码</a>
+			</div>
+			<div class="hz">
+				<div class="hz_s">
+					<span>其他方式登录登录</span>
+				</div>
+			</div>
+			<div class="qw">
+				<div class="qq">
+					<img src="images/login/qq.gif"/>
+					<span>QQ登录</span>
+				</div>
+				<div class="wechat">
+					<img src="images/login/weixin.gif"/>
+					<span>微信登录</span>
+				</div>
+			</div>
+		</div>
+	</div>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="vue/dist/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="axios/dist/axios.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var app = new Vue({
+				el:"#box",
+				data:{
+					obj:{
+						phone:"",
+						pwd:""
+					}
+				},
+				methods:{
+					submit(){
+						axios.post("/login",this.obj).then((res)=>{
+							console.log(res);
+							if(res.data == true){
+								sessionStorage.setItem("phone",this.obj.phone);
+								
+								location = localStorage.getItem("loginJump");
+							}else{
+								alert(res.data)
+							}
+						})
+					}
+					
+				}
+			})
+		</script>
+			
+	</body>
+</html>

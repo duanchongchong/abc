@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/pay.css"/>
+	</head>
+	<body>
+		<header>
+			<div class="message" onclick="history.back()"><img src="images/detail/fanhui.gif"/></div>
+			<div class="search">
+				确认付款
+			</div>
+		</header>
+		<div id="box">
+			<p>￥{{total}}</p>
+			<div class="bot">
+				<span>支付宝账号<em>159******08</em></span>
+			</div>
+			<div class="bot">
+				<span>付款方式<em>银行卡</em></span>
+			</div>
+			<div class="btn"><button @click="createHistory()" >立即支付</button></div>
+			
+		</div>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="vue/dist/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var app = new Vue({
+				el:"#box",
+				data:{
+					total:sessionStorage.getItem("total")
+				},
+				methods:{
+					jumpUser(){
+						alert("付款成功")
+						location = "user.html"
+					},
+					
+				
+				    createHistory: function(){
+				    	var shopCbr = localStorage.getItem("shopCbr");
+				    	shopCbr = JSON.parse(shopCbr);
+				    	console.log(shopCbr);
+				    	var shopCar = JSON.parse(localStorage.getItem("shopCar"))||[];
+				    	var bool = false;
+				    	if(shopCbr){
+				    		for(var i = 0;i<shopCar.length;i++){
+				    			if(shopCar[i].selected){
+//				    				console.log(shopCbr.length);
+				    				for(var j = 0;j<shopCbr.length;j++){
+				    					if(shopCar[i].id == shopCbr[j].id){
+				    						bool = true;
+				    					}
+				    				};
+				    			};
+				    			if(!bool){
+				    				shopCbr.push(shopCar[i]);
+				    			}
+				    		};
+				    		localStorage.setItem("shopCbr",JSON.stringify(shopCbr));
+				    		this.jumpUser();
+				    	}else {
+				    		var ary = [];
+				    		for(var i = 0;i<shopCar.length;i++){
+				    			if(shopCar[i].selected){
+				    				ary.push(shopCar[i]);
+				    			}
+				    		};
+				    		localStorage.setItem("shopCbr",JSON.stringify(ary));
+				    		this.jumpUser();
+				    	}
+				    }
+				}
+			})
+			
+		</script>
+	</body>
+</html>

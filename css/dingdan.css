@@ -1,0 +1,29 @@
+* { margin: 0; padding: 0; box-sizing: border-box;}
+body { font-size: 0.32rem;}
+header { height: 0.9rem; display: flex; border-bottom:0.02rem solid #dddddd ;}
+.message,.sys { width: 1.1rem;}
+.search { flex: 1; color: #666;}
+header > div { display: flex; justify-content: center; align-items: center;}
+header img { width: 48%; height: auto;}
+.message img { width: 35%;}
+header .fx img, { width: 55%; height: auto;}
+.dingdan { text-align: center; font-size: 0.34rem;}
+.dingdan img { width: 50%; height: auto; padding-top: 2rem;}
+
+.dingdan_ander { margin:0.2rem 0.3rem;}
+.dingdan_ander h2 { font-size: 0.3rem;}
+.dingdan_ander span { font-size: 0.28rem;}
+.top { display: flex; border-bottom: 0.02rem solid #dddddd; padding-bottom: 0.2rem;}
+.top > h2 { flex: 9; font-weight: normal; font-size: 0.26rem;}
+.top > span { flex: 1;}
+.dingdan_counter { display: flex; margin-top:0.2rem; border-bottom: 0.02rem solid #dddddd;}
+.shop_photo { flex: 2; text-align: center;}
+.shop_photo img { width: 80%; height: auto;}
+.nr { flex: 6;}
+.nr h3 { font-size: 0.26rem; font-weight: normal;}
+.nr span { font-size: 0.22rem; font-weight: normal; color: #dddddd;}
+.shop_price { flex: 1;}
+.shop_price > em { font-style: normal; color: #f33; text-align: right; font-size: 0.3rem;}
+.shop_price > p { padding: 0.25rem 0.2rem; color: #333333;}
+.dingdan_bottom  { display: flex; justify-content: flex-end; border-bottom: 0.02rem solid #dddddd;}
+.dingdan_bottom > span { font-size: 0.26rem; color: #333333; line-height: 0.5rem;}

@@ -1,0 +1,32 @@
+* { margin: 0; padding: 0; box-sizing: border-box;}
+.user { padding-bottom: 2rem;}
+.weidenglu { font-size: 0.26rem;}
+.sjdgk { height: 3rem; background: url(../images/user/45.jpg) no-repeat;}
+.fSize { font-size: 0.36rem; text-align: center; line-height: 3rem;}
+.fSize button {  background: #cccccc; border: none; width: 6.5rem; height: 1rem; border-radius: 4px; font-size: 0.26rem;color: #ffffff;}
+.user_photo { display: flex; flex: 5;}
+.user_info { display: flex; font-size: 0.3rem;}
+.user_info > a { text-decoration: none; margin-top: 0.3rem;}
+.user_info > a span { color: #FFFFFF; font-size: 0.34rem; padding: 0.3rem 0.3rem 0 0;}
+.user_name { flex: 1; margin-left: 0.3rem;}	
+.user_pic { width: 1.5rem; height: 1.5rem; margin: 0.3rem 0 0 0.3rem;}
+.user_pic img {width: 100%; height: auto; border-radius: 50%;}
+.user_name b { font-size: 0.4rem; display: block; font-weight: normal; color: #FFFFFF; padding-top: 0.7rem;}
+.user_name span { color: #FFFFFF; font-size: 0.26rem; padding-top: 0.1rem;}
+.user_data { display: flex;}
+.user_data > div { width:1rem; height:0.8rem; font-size: 0.26rem; color: #ffffff; text-align: center; margin: 0.4rem 0.5rem;}
+.count h2 { display: flex; justify-content: space-between; align-items: center; font-weight: normal; font-size: 0.32rem; height: 0.8rem; padding: 0 15px;border-bottom: 1px solid #eee;background-size: 0.3rem;}
+.count h2 span { color: #aaaaaa; font-size: 0.3rem;}
+.count_list { display: flex; flex-wrap: wrap; border-bottom: 0.2rem solid #f5f5f5;}
+.count_list > div { width: 20%; display: flex; justify-content: center; align-content: center;}
+.count_list > div > div { width: 60%;}
+.count_list > div > div > a { text-decoration: none; color: #333333;}
+.count_list > div img { width: 70%; height: auto; margin-left: 0.05rem;}
+.count_list > div > div > p { font-size: 0.26rem; padding-bottom: 0.2rem;}
+.count_bottom { border-bottom: none; }
+.count_bottom > div { width: 25%;}
+.count_bottom > div > div > p { font-size: 0.22rem;}
+.dingdan { font-size: 0.26rem; padding-bottom: 0.2rem;}
+footer { background: #fff; border-top: 0.02rem solid #DADADA; position: fixed; left: 0; bottom: 0; display: flex; width: 100%; justify-content: space-around; padding: 0.1rem 0;}
+footer a { text-decoration: none; color: #555; text-align: center; font-size: 0.18rem;}
+footer a img { width: 50%; height: auto;}

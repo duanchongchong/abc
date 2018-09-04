@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/list.css"/>
+	</head>
+	<body>
+		<header>
+			<div class="message" onclick="history.back()"><img src="images/detail/fanhui.gif"/></div>
+			<div class="search">
+				<input type="tex" name="" id="" value="搜索框..." />
+			</div>
+			<div class="sys"><img src="images/index/icon_xiaoxi.jpg"/></div>
+		</header>
+		<div class="btns">
+			<a href="#" class="active">综合</a>
+			<a href="#">销量</a>
+			<a href="#" class="icon">价格</a>
+			<a href="#" class="icon">筛选</a>
+		</div>
+		<div id="box">
+			<div v-if="isShow">没有找到你需要的商品~</div>
+			<main v-else>
+			<div v-for="item in ary">
+				<div>
+					<a v-bind="{href:'detail.html?id='+item.id}">
+							<img :src="item.img"/>
+					</a>
+				</div>
+				<p>{{item.title}}</p>
+				<em>￥{{item.price}}.00<span>￥{{item.pay}}.00</span></em>
+				<span class="zy">自营旗舰店</span>
+				<span class="pj"><span>{{item.msg}}</span>%好评</span>
+			</div> 
+		</main>
+		</div>
+		
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="vue/dist/vue.js" type="text/javascript" charset="utf-8"></script>
+	    <script src="axios/dist/axios.js" type="text/javascript" charset="utf-8"></script>
+	    <script type="text/javascript">
+	    	var app = new Vue({
+	       	el:"#box",
+	       	data:{
+	       		isShow:true,
+	       		ary:[]
+	       	},
+	       	created(){
+	                  var codeStr = decodeURI(location.search.split("=")[1]);
+	                  console.log(codeStr);
+	                  if(codeStr != "undefined")
+	                     axios.get("/list/"+codeStr).then((res)=>{
+	                     	console.log(res)
+	                     	if(!res.data.length == 0){
+	                     		this.ary = res.data;
+	                     		this.isShow = false;
+	                     
+	                     	}
+	                     })
+	       	}
+	       })
+	    </script>
+	</body>
+</html>

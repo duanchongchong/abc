@@ -1,0 +1,16 @@
+*{ margin: 0; padding: 0; box-sizing: border-box;}
+body { font-size: 0.32rem;}
+header { height: 0.9rem; display: flex;}
+.message,.sys { width: 1.1rem;}
+.search { flex: 1; color: #666;}
+header > div { display: flex; justify-content: center; align-items: center;}
+header img { width: 48%; height: auto;}
+.message img { width: 35%;}
+#box { border-top: 0.02rem solid #eeeeee; padding: 0 0.2rem; color: #666666;}
+#box > p { text-align: center; font-size: 0.54rem; height: 2rem; line-height: 2rem;}
+.bot { height: 0.8rem; border-bottom: 0.02rem solid #eeeeee;}
+#box > div > span { line-height: 0.6rem;}
+#box > div > span > em { float: right; font-style: normal;}
+.btn { text-align: center; border: none; margin: 0.2rem;}
+button { width: 6rem; height: 0.8rem; border-radius: 4px; border: none; margin-top: 0.5rem;}
+

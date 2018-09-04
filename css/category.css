@@ -1,0 +1,40 @@
+* { margin: 0; padding: 0; box-sizing: border-box;}
+body { font-size: 0.32rem;}
+header { height: 0.9rem; background: #fff; display: flex;}
+.message,.sys { width: 1.1rem; }
+.search { flex: 1;}
+header > div { display: flex; justify-content: center; align-items: center;}
+header img { width: 45%; height: auto;}
+.search input { width: 96%; height: 0.66rem; background: #eaebed; border: 1px solid #e0e1e4; border-radius: 8px; font-size: 0.3rem; padding-left: 20px;}
+.banner img { width: 100%; height: auto;}
+main { display: flex; border-top: 0.02rem solid #d8cfd0;}
+aside { flex: 22; border-right: 0.02rem solid #d8cfd0;}
+aside a { display: block; text-align: center;  color: #333333;line-height: 1.2rem; text-decoration: none; }
+aside .active {  border-radius: 0.26rem; color: #f30;}
+article { flex: 52; padding: 0.2rem; margin-bottom: 1.5rem;}
+article h2 { color: #333333; font-size: 0.3rem; font-weight: normal; margin-top: 0.1rem;}
+article h2 em { padding-left: 2.8rem; font-size: 0.24rem; color: #f28; font-style: normal;}
+.phone_content { border-bottom: 0.02rem solid #f0f0f0;  display: flex; flex-wrap: wrap;}
+.phone_content > div { text-align: center;}
+.phone_content > div img { width: 80%; height: auto;}
+.phone_content > div p { line-height: 0.8rem; text-align: center; font-size: 0.26rem; color: #666666;}
+.phone_content > div { width: 33.3333%; padding-top:0.2rem;}
+.parts_content > div { display: flex; flex-wrap: wrap;}
+.parts_content .att img { width: 60%; height: auto;}
+.phone { padding-top:0.2rem;}
+.pp_content > div img { border: 0.01rem solid #f0f0f0;}
+.choice h2 { font-size: 0.30rem;}
+.choice h2 em { padding-right: 0.2rem; font-size: 0.24rem; color: #f28; font-style: normal;}
+.choice_content { border-bottom: 0.02rem solid #f0f0f0;}
+.jx_pic { flex: 125;}
+.jx_pic img { width: 100%; height:auto;}
+.jx_article { flex: 357;}
+.jx_pic2 { flex: 50;}
+.jx_pic2 img { width: 60%; height: auto; padding-top: 0.25rem; margin-left: 0.15rem;}
+.choice_content > div { display: flex; flex-wrap: wrap; padding-top: 0.2rem;}
+.choice_content b { padding-left: 0.2rem; padding-top: 0.1rem; font-size: 0.26rem; color: #333333;}
+.choice_content p { padding-left: 0.2rem;line-height: 0.5rem; letter-spacing: 0.05rem; padding-top:0.1rem; color: #666666; font-size: 0.21rem;font-weight: normal;}
+.choice_content em { color: #FF3300; font-style: normal;}
+footer { background: #fff; border-top: 0.02rem solid #DADADA; position: fixed; left: 0; bottom: 0; display: flex; width: 100%; justify-content: space-around; padding: 0.1rem 0;}
+footer a { text-decoration: none; color: #555; text-align: center; font-size: 0.18rem;}
+footer a img { width: 50%; height: auto;}

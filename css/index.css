@@ -1,0 +1,68 @@
+* { margin: 0; padding: 0; box-sizing: border-box;}
+body { font-size: 0.32rem;}
+header { height: 0.9rem; background: #fff; display: flex;}
+.message,.sys { width: 1.1rem; }
+.search { flex: 1;}
+header > div { display: flex; justify-content: center; align-items: center;}
+header img { width: 48%; height: auto;}
+.search input { width: 96%; height: 0.66rem; background: #eaebed; border: 1px solid #e0e1e4; border-radius: 8px; font-size: 0.3rem; padding-left: 20px;}
+.banner img { width: 100%; height: auto;}
+.tiaozhan > a { text-decoration: none;}
+nva { display: flex; flex-wrap: wrap; border-bottom: 0.2rem solid #EEEEEE;}
+nva > div { width: 20%; height: 1.92rem; display: flex; justify-content: center; align-items: center;}
+nva > div > div { width: 70%;}
+nva img { width: 100%; height: auto;}
+nva p { text-align: center; font-size: 0.26rem;}
+.add1 { border-top:13px solid #F4f4f4}
+.add1 h2 { display: flex; justify-content: space-between; align-items: center; font-weight: normal; font-size: 0.32rem; height: 0.8rem; 
+ border-bottom: 1px solid #EEEEEE; background-size: 0.3rem; justify-content: center; }
+.gg img { width: 100%; height: auto;}
+.dy_content { display: flex; margin: 0.1rem; width: 100%;}
+.dy_content > div { flex: 1; padding: 0.1rem;}
+.dy_content > div img { width: 100%; height: auto;}
+.dy_content > div p { font-size: 0.26rem;}
+.dy_content em { font-style: normal; font-size: 0.21rem; color: #F28686;}
+.sj_content1 { display: flex; border-bottom: 1px solid #eee;}
+.lm_top { display: flex;}
+.lm_mmm { display: flex;}
+.lm_mmm img { width: 100%; height: auto;}
+.lm_mmm P { text-align: center; color: #e31436; font-size: 0.26rem;}
+.lm_top_1 h3 { font-size: 0.30rem; padding-left: 0.2rem;}
+.lm_top_1 h3 > b >em { display:inline-block;width:0.3rem;font-size: 0.2rem; color: #ffffff; background: #000000; margin: 0.06rem; font-style: normal; text-align: center;}
+.lm_top_1 h3 > span { font-size: 0.2rem;}
+.lm_top_2_pic { display: flex;}
+.lm_top_2 h3 { font-size: 0.30rem; color: #333333; padding-left: 0.2rem;}
+.lm_top_2 p { font-size: 0.26rem; padding-left: 0.2rem;}
+.lm_top_2_pic img { width: 100%; height: auto;}
+.lm1_bottom { display: flex; margin-top: 0.02rem; border-top: 0.02rem solid #EEEEEE;}
+.lm1_bottom_a1 { width: 33.3333%}
+.lm1_bottom h3 {font-size: 0.30rem; color: #333333;  padding:0.2rem 0; text-align: center;}
+.lm1_bottom p { font-size: 0.24rem; color: #333333; text-align: center;}
+.lm1_bottom_a1 > div { text-align: center; padding-top:0.1rem;}
+.lm1_bottom_a1 img { width: 80%; height: auto;}
+.add3_a { display: flex; padding: 0.02rem 0.05rem;}
+.add3_pic { width: 50%; padding: 0.10em;}
+.add3_pic img { width: 100%; height: auto;}
+.add4_content { display: flex; width: 100%;}
+.add4_content > div { flex: 1; padding: 0.1rem;}
+.add4_content > div img { width: 100%; height: auto;}
+.add4_content > div p { font-size: 0.26rem; text-align: center; color: #333333;}
+.tj_content { display: flex; border-bottom: 0.01rem solid #EEEEEE;}
+.tj_content img { width: 100%; height: auto;}
+.tj_article h3 { font-size: 0.26rem; color: #383838; padding-top: 0.2rem;}
+.tj_price { padding-top: 0.6rem}
+.tj_price { display: flex; align-items: center;}
+.tj_price em { font-size: 0.36rem; font-style: normal;}
+.tj_price em span { font-size: 0.26rem; color: #fe5e86;}
+.tj_price em b { color: #fe5e86;}
+.tj_price > span {  font-size:0.36rem; text-decoration: line-through; color: #555555; padding-left: 0.2rem;}
+.tj_article > p { font-size: 0.20rem; color: #333333; padding-top: 0.2rem;}
+.tj_content .tj_left { margin-left:0.62rem;}
+.tj_content .tj_da img { width: 120%; height: auto;}
+.pinpai { margin-bottom: 1.5rem;}
+.pp_content { display: flex; flex-wrap: wrap;}
+.pp_content a { width:25%;}
+.pp_content a img { width: 100%; height: 100%;}
+footer { background: #fff; border-top: 0.02rem solid #DADADA; position: fixed; left: 0; bottom: 0; display: flex; width: 100%; justify-content: space-around; padding: 0.1rem 0;}
+footer a { text-decoration: none; color: #555; text-align: center; font-size: 0.18rem;}
+footer a img { width: 50%; height: auto;}

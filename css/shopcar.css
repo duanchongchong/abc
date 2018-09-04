@@ -1,0 +1,46 @@
+*{ margin: 0; padding: 0; box-sizing: border-box;}
+body { font-size: 0.32rem;}
+header { height: 0.9rem; display: flex; border-bottom:0.02rem solid #dddddd ;}
+.message,.sys { width: 1.1rem;}
+.search { flex: 1; color: #666;}
+header > div { display: flex; justify-content: center; align-items: center;}
+header img { width: 48%; height: auto;}
+.message img { width: 35%;}
+header .fx img, { width: 55%; height: auto;}
+.gouwuche { text-align: center;}
+.gouwuche img { width: 50%; height: auto; padding-top: 2rem;}
+.location { display: flex; padding: 0.2rem; border-bottom: 0.01rem solid #ececec;}
+.location > div { width: 0.35rem; height: 0.35rem; color: #3d3d3d; }
+.pic > img { width: 100%; height: auto; text-align: center; padding-top: 0.1rem; margin-left: 0.1rem; }
+.location > span { padding-top: 0.1rem; padding-left: 0.3rem;}
+.pic2 > img { width: 90%; height: auto; text-align: center; padding-top: 0.07rem; margin-left: 0.1rem;}
+.preLogin { line-height: 0.8rem; background: #fff; border-top: 0.01rem solid #ddd; border-bottom: 0.01rem solid #ddd; font-size: 0.3rem;padding-left: 0.3rem;}
+.checkbox-box { width: 20px; height: 20px; border: 1px solid #333333; border-radius: 50%;position: relative;}
+.checkbox-box input { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);opacity: 0;z-index: 2;}
+.checkbox-box span { display: block; background: url(../images/shopcar/icon-v.png) no-repeat center;background-size: 80%; width: 20px; height: 20px; border-radius: 50%;
+            position: absolute; left: -1px; top: -1px; transition: all 0.5s;}
+.checkbox-box input[type="checkbox"] + span { opacity: 0;}
+.checkbox-box input[type="checkbox"]:checked + span { opacity: 1; background-color: #333333;}
+main { border-top: 0.02rem solid #c7c6c6; border-bottom: 0.02rem solid #ddd; padding:0 0.3rem;  }
+main h2 { line-height: 0.8rem; border-bottom: 0.02rem solid #ddd; font-weight: normal; font-size: 0.3rem;}
+.shop_content > div { display: flex; padding: 0.3rem 0;}
+.shop_content > div input { flex: 6;}
+.shop_content .shop_photo { flex: 16; margin-left: 0.1rem; margin-right: 0.3rem;}
+.shop_content .shop_photo img { width: 100%; height: auto;}
+.shop_content .shop_info { flex: 46;}
+.shop_info h3 { font-size: 0.32rem; font-weight: normal; width: 100%;}
+.shop_info > div { display: flex; margin-top: 0.16rem; justify-content: space-between;}
+.count { display: flex; width: 1.8rem; margin-right: 0.2rem; height: 0.5rem;}
+.count button { width: 33.3333%;}
+.count input { width: 33.3333%; text-align: center;}
+.shop_price { width: 2rem; display: flex; align-items: center; justify-content: flex-end;}
+.shop_price em { font-style: normal; color: #f33; text-align: right; font-size: 0.36rem;}
+footer { display: flex; height: 1rem; border-top: 0.02rem solid #ddd;  position: fixed; left: 0; bottom: 0;
+	width: 100%; background: #FFFFFF; align-items: center; margin-top:2rem; font-size: 0.26rem;}
+.checkbox { flex: 2; margin: 0.2rem 0.3rem;}
+.checkbox > p { margin-left: -0.1rem; margin-top: 0.1rem; }
+.overll { flex: 10 ; width: 2.6rem; margin-left: 1.5rem;}
+.overll > p { font-size: 0.3rem; display: flex; padding-top: 0.02rem 0; }
+.overll > p > em { font-size: 0.3rem; font-style: normal; color: #f33; font-weight: 500;}
+.overll > span { font-size: 0.26rem; color:#999; padding-left:0.9rem; line-height: 0.3rem;}
+.btn > button { width: 1.7rem; border: none; background: #f33; color: #fff; height: 1rem; font-size: 0.3rem;}

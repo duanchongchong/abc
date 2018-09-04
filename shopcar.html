@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/shopcar.css"/>
+	</head>
+	<body>
+		<header>
+			<div class="message" onclick="history.back()"><img src="images/detail/fanhui.gif"/></div>
+			<div class="search">
+				  购物车
+			</div>
+			<div class="fx"><img src="images/detail/diandian.gif"/></div>
+		</header>
+		<div id="box">
+		<div v-if="isShow">
+			<div class="gouwuche">
+				<img src="../images/shopcar/gouwuche.gif"/>
+				<p>购物车里还没有商品哦</p>
+			</div>
+		</div>
+		<main v-else>
+			<div v-for="item in ary">
+				<h2>{{item.category}} 旗舰店</h2>
+				<div class="shop_content">
+					<div>
+						<div class="select">
+							<div class="checkbox-box">
+								<input type="checkbox" v-model="item.selected" id="usename"/>
+								<span></span>
+							</div>
+							
+						</div>
+						<div class="shop_photo">
+							<img :src="item.img"/>
+						</div>
+						<div class="shop_info">
+							<h3>{{item.title}}</h3>
+							<div>
+								<div class="count">
+									<button @click="jian(item)">-</button>
+									<input type="number" v-model="item.num" min="1" />
+									<button @click="jia(item)">+</button>
+								</div>
+								<div class="shop_price">
+									<em>￥{{item.price}}.00</em>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer>
+			<div class="checkbox">
+			<div class="checkbox-box">
+			<input type="checkbox" v-model="selectAll" v-on:change="select()" />
+			<span></span>
+			</div>
+			<p>全选</p>
+			</div>
+			<div class="overll">
+				<p>总计(不含税)：￥<em>{{abc}}</em></p>
+				<span>商品税费:￥0.00</span>
+			</div>
+			<div class="btn">
+				<button @click="jumpLogin()">结算({{tap}})</button>
+			</div>
+			
+		</footer>
+		</main>
+		
+	</div>
+	</body>
+	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	<script src="vue/dist/vue.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+	console.log(JSON.parse(sessionStorage.getItem("shopCar")))
+		var app = new Vue({
+			el:"#box",
+			data:{
+				ary:JSON.parse(localStorage.getItem("shopCar")) || [],
+				isShow:true,
+				selectAll:true
+			},
+			computed:{
+				abc(){
+					var total = 0;
+					for(var i=0;i<this.ary.length;i++){
+						if(this.ary[i].selected){
+							total += this.ary[i].price*this.ary[i].num
+						}
+					}
+					return total;
+				},
+				tap(){
+					var total = 0;
+					console.log(total)
+					for(var i=0;i<this.ary.length;i++){
+						total += this.ary[i].selected;
+					}
+					return total;
+					
+				}
+				
+			},
+			created(){
+				if(this.ary.length != 0){
+					this.isShow = false
+				}
+			},
+			methods:{
+				jia(item){
+					item.num++;
+					localStorage.setItem("shopCar",JSON.stringify(this.ary))
+				},
+				jian(item){
+					if(item.num<=1){
+						if(confirm("确定要删除这件商品吗？")){
+							this.ary = this.ary.filter(function(data){
+								return data.id != item.id
+							})
+							localStorage.setItem("shopCar",JSON.stringify(this.ary))
+						}
+					  
+					}else{
+						item.num--
+					}
+					
+				},
+				select(){
+					for(var i=0;i<this.ary.length;i++){
+						if(this.selectAll){
+							this.ary[i].selected = true
+						}else{
+							this.ary[i].selected = false
+						}
+					}
+				},
+				jumpLogin(){
+					sessionStorage.setItem("total",this.abc)
+					localStorage.setItem("loginJump","pay.html")
+					if(sessionStorage.getItem("phone")){
+						location = "pay.html"
+					}else{
+						location = "denglu.html"	
+					}
+					
+				}
+			}
+		})
+	</script>
+</html>

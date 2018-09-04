@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/install.css"/>
+	</head>
+	<body>
+		<header>
+			<div class="message" onclick="history.back()"><img src="images/detail/fanhui.gif"/></div>
+			<div class="search">
+				  设置
+			</div>
+			<div class="fx"><img src="images/detail/diandian.gif"/></div>
+		</header>
+		<div id="box">
+			<div class="checkbox">
+			<div class="install axcne">
+					<span>我的收获地址</span>
+					<div><img src="images/shopcar/xiaojiantou.gif"/></div>
+			</div>
+			<div class="install axcne">
+					<span>账户与安全</span>
+					<div><img src="images/shopcar/xiaojiantou.gif"/></div>
+			</div>
+			<div class="install">
+					<span>地区与设置</span>
+					<div><img src="images/shopcar/xiaojiantou.gif"/></div>
+			</div>
+			<div class="install">
+					<span>音效与通知</span>
+					<div><img src="images/shopcar/xiaojiantou.gif"/></div>
+			</div>
+			<div class="install axcne">
+					<span>隐私 </span>
+					<div><img src="images/shopcar/xiaojiantou.gif"/></div>
+			</div>
+			<div class="install">
+					<span>问题反馈</span>
+					<div><img src="images/shopcar/xiaojiantou.gif"/></div>
+			</div>
+			<div class="install">
+					<span>关于产品</span>
+					<div><img src="images/shopcar/xiaojiantou.gif"/></div>
+			</div>
+		</div>
+		<div class="btn">
+			<button @click="logOuter">退出当前用户</button>
+			
+		</div>
+		</div>
+		
+		
+	</body>
+	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	<script src="vue/dist/vue.js" type="text/javascript" charset="utf-8"></script>
+	<script src="axios/dist/axios.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+	   var app = new Vue({
+	   	el:"#box",
+	   	methods:{
+	   		logOuter(){
+	   			sessionStorage.removeItem("phone")
+	   			location = "user.html";
+	   		}
+	   	}
+	   })
+	</script>
+ 
+</html>

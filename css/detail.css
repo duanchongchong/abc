@@ -1,0 +1,58 @@
+*{ margin: 0; padding: 0; box-sizing: border-box;}
+body { font-size: 0.32rem;}
+header { height: 0.9rem; display: flex;}
+.message,.sys { width: 1.1rem;}
+.search { flex: 1; color: #666;}
+header > div { display: flex; justify-content: center; align-items: center;}
+header img { width: 48%; height: auto;}
+.message img { width: 35%;}
+header .fx img, { width: 55%; height: auto;}
+.banner { height: 6.6rem; display: flex; justify-content: center; align-items: center; border-top: 0.02rem solid #ddd; border-bottom: 0.02rem solid #eeeeee;}
+.banner img {height: 88%;width: auto;}
+.price {  padding:0 0.2rem;display: flex; padding-top: 0.2rem;}
+.price > em { font-size: 0.46rem; color: #e31436; padding-left: 0.2rem; font-style: normal; font-weight: bolder;}
+.price > em > span {font-size: 0.22rem; color: #999999;  text-decoration: line-through; padding-left:0.2rem; font-weight: normal;}
+.price > p { margin-left: 0.2rem; color: #ffffff; font-size: 0.2rem; height: 0.3rem; margin-top: 0.2rem; background: #e31436;letter-spacing: 0.06rem; padding-left: 0.05rem;}
+.price > span {  margin-left:0.2rem;color: #ffffff; font-size: 0.18rem; height: 0.3rem; margin-top: 0.2rem; background: #e31436; letter-spacing: 0.06rem; padding-left: 0.05rem;}
+.title { padding: 0.2rem; margin-top: 0.2rem;}
+.title > h3 { font-size: 0.32rem; }
+.title > h3 > em { margin-right: 0.1rem; font-size: 0.22rem; font-style: normal; font-weight: normal;  border: 0.02rem solid #e31436;letter-spacing: 0.01rem; line-height: 150%;}
+.title > p { font-size: 0.26rem; text-indent: 0.25rem; color: #666666; line-height: 150%;}
+.chuxiao { padding: 0.2rem; display: flex;}
+main > div > h3 {  font-size: 0.26rem;}
+main >div { border-top: 0.02rem solid #eeeeee;}
+.chuxiao span  { padding-left: 0.4rem; font-size: 0.25rem; color: #e31436;}
+.peishong { padding: 0.2rem; }
+.peishong > h3 {  font-size: 0.26rem;}
+.peishong > h3 > em { font-style: normal; padding-left: 0.43rem; font-size: 0.24rem; }
+.peishong > span { padding-left:1.05rem; font-size: 0.24rem; color: #797979;}
+.s_title { margin:0 0.2rem; color: #848484; font-size: 0.26rem; color: #333333;}
+.count { display: flex; height: 0.7rem; align-items: center;}
+.count > p { font-size: 0.24rem; color: #848484;}
+.count > div { display: flex; width: 1.6rem; margin-right: 0.2rem; padding-left: 0.29rem;}
+.count > div button { width: 33.3333%;}
+.count > div input { width: 33.3333%; text-align: center;}
+.services > p { padding-left: 0.29rem; font-size: 0.24rem; color: #848484;} 
+.shuoming { padding: 0.2rem; display: flex; padding-bottom:0.2rem; border-bottom: 0.2rem solid #f0f0f0;}
+.shuoming > h3 { flex:20 font-size: 0.26rem;}
+.shuoming > span { flex:80; padding-left: 0.48rem; font-size: 0.24rem;  color: #797979; line-height: 180%;}
+.msg { border-top: 0.01rem solid #f4f4f4; border-bottom: 1.6rem solid #f4f4f4;}
+.msg h2 { border-bottom: 0.01rem solid #ddd; height: 0.78rem;display: flex;align-items: center;font-weight: normal;font-size: 0.32rem;padding-left: 0.22rem;}
+.msg h2 span {color: #ee4d61; padding-left: 2.6rem;}
+.msg_user{display: flex; justify-content: space-between; padding: 0.3rem;}
+.msg_user>div:nth-child(1) { width: 2.2rem; line-height: 0.3rem; color: #666666;}
+.msg_user>div:nth-child(2) em{ border: 0.02rem solid #f33; border-radius: 5px; color: #f33; font-style: normal; font-size: 0.26rem; padding:2px 4px; vertical-align: top;}
+.msg_user>div:nth-child(2) span{ color: #666; padding:2px 4px;}
+.msg_content p { padding: 0.3rem; padding-top: 0; line-height: 0.42rem;}
+.msg_pic ul { display: flex; padding-left: 0.3rem; list-style: none;}
+.msg_pic li { margin-right: 0.2rem; }
+.msg_pic img { width: 1.2rem; height: auto;}
+.msg_content > div{ border: 0.01rem solid #ddd; color: #656565; padding-bottom: 0.2rem;}
+.more { height: 0.86rem; display: flex; justify-content: center; align-items: center; color: #666; border-bottom: 0.01rem solid #ddd;}
+footer { display: flex; position: fixed; left: 0; bottom: 0; background: #fff; border-top: 0.01rem solid #ddd; width: 100%; height: 1.1rem;}
+.collect {flex: 2; text-align: center; font-size: 0.26rem;color: #555;}
+.collect img { width: 50%; height: auto;}
+.btn { flex: 8;display: flex;justify-content: center;align-items:center; }
+.btn button { font-size: 0.28rem;}
+.btn_login { background: #111111; border: none; width: 100%; height:100%; color: #fff;}
+.btn_mai { background: #f33; border: none; width: 100%; height:100%; color: #fff;}

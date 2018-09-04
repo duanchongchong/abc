@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		 <link rel="stylesheet" type="text/css" href="css/detail.css"/>
+	</head>
+	<body>
+		<header>
+			<div class="message" onclick="history.back()"><img src="images/detail/fanhui.gif"/></div>
+			<div class="search">
+				商品详情
+			</div>
+			<div class="fx"><img src="images/detail/diandian.gif"/></div>
+		</header>
+		
+		<div id="box">
+			<div v-if="isShow">暂时没有找到你需要的商品~</div>
+		<div v-else>
+			<main>
+				<div class="banner">
+					<img :src="obj.img"/>
+				</div>
+			<div class="price">
+				<em>￥{{obj.price}}.00<span>￥{{obj.pay}}</span></em>
+				<p>特价</p>
+				<span>税费补贴</span>
+			</div>
+			<div class="title">
+                 <h3><em>自营</em>  {{obj.title}}</h3>
+				<p>{{obj.detail}}</p>
+			</div>
+			<div class="chuxiao">
+			   <h3>促销</h3>
+			   <span>【税费补贴】本商品税费有商家承担</span>
+			</div>
+			<div class="peishong">
+				<h3>配送 <em>至信阳平桥区</em></h3>
+				<span>24:00支付 预计在6月9日送达</span>
+			</div>
+			<div class="other">
+			  <div class="count">
+				<h3 class="s_title">数量</h3>
+				    <div>
+						<button @click="jian()">-</button>
+						<input type="number" v-model="num" min="1" />
+						<button @click="jia()">+</button>
+					</div>
+				<p>库存564件</p>
+			  </div> 
+		   </div>
+		    <div class="count services">
+					<h3 class="s_title">服务</h3>
+					<p>由本商城电商平台发货并提供售后服务</p>
+			</div>
+			<div class="peishong yunfei">
+				<h3>运费 <em>满88元免邮费</em></h3>
+			</div>
+			<div class="shuoming">
+				<h3>说明</h3>
+				<span>税费补贴 | 假一賠十 | 7天无忧退货 | 不可使用优惠券 | 自营保税仓发货 | 黑卡会员96折</span>
+			</div>
+           <div class="msg">
+			<h2>
+				商品评论 (20211)
+			</h2>
+			<div class="msg_content" v-for=" item in obj.info">
+				<div>
+					<div class="msg_user">
+						<div>{{item.name}}</div>
+						<div>
+							<em>好评</em>
+							<span>{{item.time}}</span>
+						</div>
+					</div>
+					<p>{{item.msg}}</p>
+					<div class="msg_pic">
+						<ul>
+							<li v-for="pic in item.pic">
+								<img :src="pic"/>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="more">查看更多评论</div>
+		</div>
+		</main>
+		<footer>
+			
+			   <div class="collect">
+			      <a href="shopcar.html">
+			      	<img src="images/detail/gouwuche.gif"/>
+			      </a>
+			             <p>购物车</p>
+			   </div>
+			</a>
+			<div class="btn">
+				<button class="btn_login" v-on:click="addCar">加入购物车</button>
+			    <button class="btn_mai" @click="jumpLogin()">立即购买</button>
+			</div>
+		</footer>
+		</div>
+		
+	</div>
+	</body>
+	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	<script src="vue/dist/vue.js" type="text/javascript" charset="utf-8"></script>
+	<script src="axios/dist/axios.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script type="text/javascript">
+		var app = new Vue({
+			el:"#box",
+			data:{
+				isShow:true,
+				obj:{},
+			    num:1
+			    
+			},
+			created(){
+	              var id = location.search.split("=")[1];
+		            console.log(id) 
+	                  if(id != "undefined"){
+						axios.get("/detail/"+id).then((res)=>{
+							console.log(res)
+							if(res.data.length != 0){
+								this.isShow = false;
+								this.obj = res.data[0];
+							}
+						})
+					}
+				
+	            },
+              methods:{
+              	jia(){
+              		if(this.num < this.obj.count){
+              			this.num ++;
+              		}
+              	},
+              	jian(){
+              		if(this.num > 1){
+              			this.num --;
+              		}
+              	},
+              	addCar(){
+              		var data = {
+              			id:this.obj.id,
+              			img:this.obj.img,
+              			title:this.obj.title,
+              			price:this.obj.price,
+              			category:this.obj.category,
+              			num:this.num,
+              			selected:true
+              		}
+              		if(localStorage.getItem("shopCar")){
+              		 var res = JSON.parse(localStorage.getItem("shopCar"));
+              		  var bool=true;
+              		  for(var i=0; i<res.length; i++){
+              		  	if(res[i].id == data.id){
+              		  		res[i].num += data.num;
+              		  		bool = false;
+              		  	}
+              		  }
+              		   if(bool){
+              		   	res.push(data)
+              		   }
+              		   localStorage.setItem("shopCar",JSON.stringify(res))
+              		}else{
+              			var ary = [data];
+              			localStorage.setItem("shopCar",JSON.stringify(ary))
+              		}
+              		alert("已经加入到购物车")
+              	},
+				jumpLogin(){
+					var data = {
+              			id:this.obj.id,
+              			img:this.obj.img,
+              			title:this.obj.title,
+              			price:this.obj.price,
+              			category:this.obj.category,
+              			num:this.num,
+              			selected:true
+              		}
+              		if(localStorage.getItem("shopCbr")){
+              		 var res = JSON.parse(localStorage.getItem("shopCbr"));
+              		  var bool=true;
+              		  for(var i=0; i<res.length; i++){
+              		  	if(res[i].id == data.id){
+              		  		res[i].num += data.num;
+              		  		bool = false;
+              		  	}
+              		  }
+              		   if(bool){
+              		   	res.push(data)
+              		   }
+              		   localStorage.setItem("shopCbr",JSON.stringify(res))
+              		}else{
+              			var ary = [data];
+              			localStorage.setItem("shopCbr",JSON.stringify(ary))
+              		}
+              		
+					sessionStorage.setItem("total",this.obj.price*this.num)
+					localStorage.setItem("loginJump","pay.html")
+					if(sessionStorage.getItem("phone")){
+						location = "pay.html"
+					}else{
+						location = "denglu.html"	
+					}
+					
+				}
+              }
+		})
+	</script>
+
+
+		
+</html>
